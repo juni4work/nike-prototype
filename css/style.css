@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
 
 body,html{
 	margin:0;
 	padding:0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 div, header , section , span , footer{
@@ -20,20 +20,39 @@ div, header , section , span , footer{
 	margin:0;
 	padding:0;
 	overflow: hidden;
-	transition: .4s ease all;
-	-webkit-transition:.4s ease all;
-	-moz-transition:.4s ease all;
-}
-
-#main.open{
-    transform: translateX(-20%);
-}
-
-#main.home-page{
-	background:url('../img/bg.jpg') no-repeat;
+	transition: .5s ease-out all;
+	-webkit-transition:.5s ease-out all;
+	-moz-transition:.5s ease-out all;
 	background-size:cover;
 }
 
+
+#main.grad-main{
+	background:url('../img/bg.jpg') no-repeat;
+}
+#main.grad2{
+	background:url('../img/bg2.jpg') no-repeat;
+}
+#main.grad3{
+	background:url('../img/bg3.jpg') no-repeat;
+}
+#main.grad4{
+	background:url('../img/bg4.jpg') no-repeat;
+}
+#main.grad5{
+	background:url('../img/bg5.jpg') no-repeat;
+}
+#main.grad6{
+	background:url('../img/bg6.jpg') no-repeat;
+}
+#main.grad7{
+	background:url('../img/bg7.jpg') no-repeat;
+}
+
+
+#main.open{
+	margin-left:-400px;
+}
 
 /*container*/
 
@@ -120,10 +139,10 @@ li h3{
 
 li p{
 	padding:0;
-	margin:0;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 700;
     color:rgba(0,0,0,.6);
-    margin: -5px 10px 0 0;
+    margin: 0px 10px 0 0;
 }
 
 li .price{
@@ -149,7 +168,7 @@ li{
 li:hover{
 	transform:scale(1.1);
 	z-index: 1000;
-	box-shadow: 0 0 68px rgba(0,0,0,.7);
+	box-shadow: 0 0 68px rgba(0,0,0,.5);
 }
 
 
@@ -191,7 +210,11 @@ li.faded:hover{
 	background:rgba(255,255,255,1);
 }
 
-li.faded:hover h3{
+li.faded p{
+	color:rgba(255,255,255,.6);
+}
+
+li.faded:hover h3 ,li.faded:hover p{
 	color:#333;
 }
 
@@ -243,6 +266,14 @@ li.green:hover{
 
 .products ul li.regular{
 	border:1px solid rgba(255,255,255,.3);
+}
+
+.products ul li.regular p{
+	color:rgba(255,255,255,.6);
+}
+
+.products ul li.regular:hover p{
+	color:rgba(0,0,0,.6);
 }
 
 .products li img{
@@ -331,12 +362,12 @@ li.green:hover{
 
 .basket{
 	position: absolute;
-	top:30px;
+	top:35px;
 	width:80px;
 	height: 80px;
 	border-radius: 40px;
 	border:3px solid #f46442;
-	right: 100px;
+	right: 0px;
 	z-index: 102;
 	box-shadow: 0 0 20px rgba(0,0,0,.3);
 	transition: .3s ease-in all;
@@ -399,7 +430,7 @@ li.green:hover{
 	float:left;
 	border:none;
 	font-size:30px;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 	height: 150px;
 	text-transform: uppercase;
 	color:#fff;
@@ -434,11 +465,74 @@ li.green:hover{
 /*cart*/
 
 .cart{
-	width:60%;
 	position: fixed;
-	right:0;
+	width:400px;
 	height: 100%;
-	background:#333;
-	z-index: 101;
+	border-radius:0px;
+	z-index: 2000;
 	top:0;
+	padding:30px 35px;
+	background: #f46442;
+	transition: .3s ease-out all;
+	right:-400px;
+	overflow: hidden;
+}
+
+
+.cart.open{
+	right:0;
+}
+
+.cart:before{
+	content:'';
+	position: absolute;
+	right: 0;
+	width:390px;
+	background:#f9f3f1;
+	top:0;
+	z-index: -1;
+	height: 100%;
+}
+
+.cart h2{
+	font-size: 40px;
+	border-bottom:1px solid #ccc;
+}
+
+.cart ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.cart ul li{
+	width:100%;
+	padding:20px 30px;
+	background:#fff;
+	margin-bottom:10px;
+	box-shadow:0 0 20px rgba(0,0,0,.1);
+}
+
+.cart ul li h3{
+	margin:0;
+	padding:0;
+}
+
+.cart h2{
+	margin:20px 0;
+}
+
+.cart .checkout{
+	position: absolute;
+	bottom:0;
+	width:100%;
+	right:0;
+	height: 60px;
+	background:#f46442;
+	color:#fff;
+	text-align:center;
+	line-height: 60px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
 }
